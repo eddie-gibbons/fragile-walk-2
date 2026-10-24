@@ -13,7 +13,7 @@ function menu.draw(state)
 end
 
 function menu.exit(state)
-
+  print("Exiting Menu")
 end
 
 return menu

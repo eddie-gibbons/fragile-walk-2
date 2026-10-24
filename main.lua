@@ -18,6 +18,10 @@ function love.update(dt)
   -- Change Scenes if we are supposed to
   
   if (state.onTransition) then
+    if (state.previousScene) then 
+      scenes[state.previousScene].exit(state)
+    end
+    
     scenes[state.currentScene].init(state)
     state.onTransition = false
   else
