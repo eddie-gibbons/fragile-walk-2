@@ -1,0 +1,28 @@
+
+# Editor backup files
+*~
+*.lua~
+
+# Vim
+*.swp
+*.swo
+*.swn
+.*.sw?
+
+# Emacs
+\#*#
+.\#*
+
+# IDEs
+.idea/
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build artifacts
+*.love
