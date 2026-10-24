@@ -4,7 +4,7 @@
 
 
 function love.load()
-  state = {}
+  state = require("state")
   state.currentScene = "menu"
 
   scenes = {}
@@ -16,9 +16,13 @@ end
 function love.update(dt)
   -- Update the active scene
   -- Change Scenes if we are supposed to
-
-  -- updates current state
-  scenes[state.currentScene].update(state, dt)
+  
+  if (state.onTransition) then
+    scenes[state.currentScene].init(state)
+    state.onTransition = false
+  else
+    scenes[state.currentScene].update(state, dt)
+  end
 end
 
 function love.draw()
